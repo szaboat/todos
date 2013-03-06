@@ -22,6 +22,7 @@ def edit(request, id=None):
         form = TodoItemForm(request.POST, initial=todo)
         if form.is_valid():
             todo.name = form.cleaned_data.get('name')
+            todo.done = form.cleaned_data.get('done')
             todo.save()
             redirect_url = reverse(index)
             return HttpResponseRedirect(redirect_url)

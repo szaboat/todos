@@ -5,7 +5,7 @@
     {% if todos %}
         <ul>
             {% for todo in todos %}
-                <li {% if todo.priority != 0 %}class="urgent"{% endif %}>
+                <li class="{% if todo.priority != 0 %}urgent{% endif %}{% if todo.done %} done{% endif %}">
                     {{ todo.name }}
                     <span class="edit">
                         <a href="/edit/{{ todo.id }}/">edit</a>

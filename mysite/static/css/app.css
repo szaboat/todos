@@ -6,7 +6,9 @@ li .edit {
     padding: 0 0 0 1em;
     float: right;
 }
-
+li.done {
+    text-decoration: line-through;
+}
 li:hover .edit {
     display: inline;
 }
