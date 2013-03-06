@@ -1,0 +1,8 @@
+li .edit {
+    display: none;
+    padding: 0 0 0 1em;
+}
+
+li:hover .edit {
+    display: inline;
+}
