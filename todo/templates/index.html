@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title></title>
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <pre>
+        TODO!
+        ====
+
+        {% for todo in todos %}
+            * {% if todo.priority != 0 %}!!! {% endif %}{{ todo.name }}
+        {% endfor %}
+        </pre>
+    </body>
+</html>
