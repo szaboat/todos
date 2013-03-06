@@ -1,8 +1,16 @@
+ul {
+    width: 200px;
+}
 li .edit {
     display: none;
     padding: 0 0 0 1em;
+    float: right;
 }
 
 li:hover .edit {
     display: inline;
+}
+h1 a {
+    color: #ccc;
+    font-weight: bold;
 }

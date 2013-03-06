@@ -12,9 +12,11 @@ def index(request):
 
 def edit(request, id=None):
     if id:
+        action = 'edit'
         todo = get_object_or_404(TodoItem, pk=id)
     else:
-        return HttpResponseBadRequest()
+        action = 'new'
+        todo = TodoItem()
 
     if request.POST:
         form = TodoItemForm(request.POST, initial=todo)
@@ -23,9 +25,12 @@ def edit(request, id=None):
             todo.save()
             redirect_url = reverse(index)
             return HttpResponseRedirect(redirect_url)
-
     else:
         form = TodoItemForm(initial={'name': todo.name})
 
-    return TemplateResponse(request, 'edit.html', {'form': form})
+    context = {
+        'form': form,
+        'action': action,
+    }
+    return TemplateResponse(request, 'edit.html', context=context)
 
