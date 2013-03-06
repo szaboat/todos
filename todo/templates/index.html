@@ -6,15 +6,18 @@
         <!--[if lt IE 9]>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/inuit.min.css" type="text/css" />
     </head>
     <body>
-        <pre>
-        TODO!
-        ====
-
-        {% for todo in todos %}
-            * {% if todo.priority != 0 %}!!! {% endif %}{{ todo.name }}
-        {% endfor %}
-        </pre>
+        <h1>ToDo List</h1>
+        {% if todos %}
+            <ul>
+                {% for todo in todos %}
+                    <li>{% if todo.priority != 0 %}!!!{% endif %} {{ todo.name }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No todos for today. Create one <a href="/new">here</a>!</p>
+        {% endif %}
     </body>
 </html>
