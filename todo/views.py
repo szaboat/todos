@@ -27,7 +27,7 @@ def edit(request, id=None):
             redirect_url = reverse(index)
             return HttpResponseRedirect(redirect_url)
     else:
-        form = TodoItemForm(initial={'name': todo.name})
+        form = TodoItemForm(initial={'name': todo.name, 'done': todo.done })
 
     context = {
         'form': form,
